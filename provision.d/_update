@@ -1,0 +1,6 @@
+if ! [ -r /.codebox4im-updated-on-$(date +%Y%m%d) ]; then
+	apt-get -q -y update
+	apt-get -q -y dist-upgrade
+	rm -f /home/vagrant/postinstall.sh /.codebox4im-updated-on-*
+	touch /.codebox4im-updated-on-$(date +%Y%m%d)
+fi
