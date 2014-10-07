@@ -6,9 +6,8 @@ _update
 _provision g++ /usr/bin/g++
 _provision git /usr/bin/git
 _provision python-dev /usr/include/python2.7/Python.h
-#_provision supervisor /usr/bin/supervisord
 # Provisioned by a function
-_provision jars /usr/share/java/.provisioned
+_provision jars /usr/local/share/java/.provisioned
 _provision getpip /usr/local/bin/pip
 _provision nodejs /usr/bin/nodejs
 _provision codebox /usr/bin/codebox

@@ -45,7 +45,7 @@ cat >/usr/share/nginx/html/start/index.html <<-'EOF'
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title>Codebox4im</title>
+		<title>codebox4im</title>
 		<style>
 		body {
 		width: 35em;
@@ -55,17 +55,18 @@ cat >/usr/share/nginx/html/start/index.html <<-'EOF'
 		</style>
 	</head>
 	<body>
-		<h1>Codebox4im</h1>
+		<h1>codebox4im</h1>
 		<ul>
 		<li>Accesso all'<a href="/?email=codebox&amp;token=codebox">IDE</a>,</li>
 		<li>Documentazione locale:
 		<ul>
 			<li>Java SE <a href="/docs/java/">General Documentation</a> e <a href="/docs/java/api/">API Specification</a>,</li>
 			<li>Libreria <a href="/docs/prog/"><samp>prog</samp></a>,</li>
-			<li>Libreria <a href="/docs/jmim/"><samp>j4im</samp></a>,</li>
+			<li>Libreria <a href="/docs/j4im/"><samp>j4im</samp></a>,</li>
 		</ul>
 		</li>
 		</ul>
+		<p>© Copyright 2014, Massimo Santini &emdash; <a href="https://github.com/mapio/codebox4im">https://github.com/mapio/codebox4im</a>.</p>
 	</body>
 	</html>
 EOF

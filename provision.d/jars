@@ -1,13 +1,15 @@
-apt-get -q -y unzip
+apt-get -q -y 	install unzip
 
 # jars
 
-mkdir -p /usr/share/java
-cd /usr/share/java
+mkdir -p /usr/local/share/java
+cd /usr/local/share/java
 
-curl -sL -o /usr/share/java/prog.jar http://pighizzini.di.unimi.it/jb/librerie/prog-3ed.jar
+curl -sL -o prog.jar http://pighizzini.di.unimi.it/jb/librerie/prog-3ed.jar
 
-curl -sL -o /usr/share/java/j4im.jar https://github.com/mapio/j4im/releases/download/0.3-beta/j4im-0.3-beta.jar
+curl -sL -o j4im.jar https://github.com/mapio/j4im/releases/download/0.3-beta/j4im-0.3-beta.jar
+
+chmod -R a+rX /usr/local/share/java
 
 # docs
 
@@ -19,3 +21,5 @@ curl -sL -o /tmp/prog.zip http://pighizzini.di.unimi.it/jb/librerie/prog-doc-3ed
 curl -sL -o /tmp/j4im.zip https://github.com/mapio/j4im/releases/download/0.3-beta/j4im-0.3-beta-javadoc.zip && unzip /tmp/j4im.zip && mv j4im-0.3-beta-javadoc j4im
 
 curl -sL -C - -b "oraclelicense=accept-securebackup-cookie" -o /tmp/java.zip http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-apidocs.zip && unzip /tmp/java.zip && mv docs java
+
+chmod -R a+rX /usr/share/nginx/html/docs
