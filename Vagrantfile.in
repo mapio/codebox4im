@@ -6,21 +6,25 @@ _update
 _provision g++ /usr/bin/g++
 _provision git /usr/bin/git
 _provision python-dev /usr/include/python2.7/Python.h
+#_provision supervisor /usr/bin/supervisord
 # Provisioned by a function
+_provision jars /usr/share/java/.provisioned
 _provision getpip /usr/local/bin/pip
 _provision nodejs /usr/bin/nodejs
 _provision codebox /usr/bin/codebox
 _provision java7 /usr/lib/jvm/java-7-oracle/jre/bin/java
 _provision mercurial /usr/local/bin/hg
 _provision userfiles /home/vagrant/.userfiles
+_provision nginx /usr/sbin/nginxx
 # Finalizing
 _fixperms
+_cleanup
 PROVISION
 
 Vagrant.configure("2") do |config|
   config.vm.define :codebox do |codebox|
 	codebox.vm.box     = "ubuntu/trusty64"
-    codebox.vm.network :forwarded_port, guest: 8000, host: 8000
+    codebox.vm.network :forwarded_port, guest: 80, host: 8000
     codebox.vm.provision :shell, :inline => $functions + "\n" + $provision
   end
 end

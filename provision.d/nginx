@@ -1,0 +1,77 @@
+apt-get -y install nginx
+
+cat >/etc/nginx/sites-available/codebox <<-'EOF'
+	server {
+
+		listen 80;
+
+		location / {
+			proxy_pass http://127.0.0.1:8000/;
+			proxy_redirect off;
+
+			proxy_set_header Host $host;
+			proxy_set_header X-Real-IP $remote_addr;
+			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+			proxy_max_temp_file_size 0;
+
+			client_max_body_size 10m;
+			client_body_buffer_size 128k;
+
+			proxy_connect_timeout 90;
+			proxy_send_timeout 90;
+			proxy_read_timeout 90;
+
+			proxy_buffer_size 4k;
+			proxy_buffers 4 32k;
+			proxy_busy_buffers_size 64k;
+			proxy_temp_file_write_size 64k;
+		}
+
+		rewrite ^/start$ http://127.0.0.1:8000/start/ permanent;
+		location /start/ {
+			root /usr/share/nginx/html;
+		}
+
+		rewrite ^/docs$ http://127.0.0.1:8000/docs/ permanent;
+		location /docs/ {
+			root /usr/share/nginx/html;
+		}
+	}
+EOF
+
+mkdir -p /usr/share/nginx/html/start
+
+cat >/usr/share/nginx/html/start/index.html <<-'EOF'
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Codebox4im</title>
+		<style>
+		body {
+		width: 35em;
+		margin: 0 auto;
+		font-family: Tahoma, Verdana, Arial, sans-serif;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>Codebox4im</h1>
+		<ul>
+		<li>Accesso all'<a href="/?email=codebox&amp;token=codebox">IDE</a>,</li>
+		<li>Documentazione locale:
+		<ul>
+			<li>Java SE <a href="/docs/java/">General Documentation</a> e <a href="/docs/java/api/">API Specification</a>,</li>
+			<li>Libreria <a href="/docs/prog/"><samp>prog</samp></a>,</li>
+			<li>Libreria <a href="/docs/jmim/"><samp>j4im</samp></a>,</li>
+		</ul>
+		</li>
+		</ul>
+	</body>
+	</html>
+EOF
+
+
+rm -f /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/codebox /etc/nginx/sites-enabled/
+
+/etc/init.d/nginx reload

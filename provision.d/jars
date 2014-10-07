@@ -1,2 +1,21 @@
-curl -sL https://oss.sonatype.org/content/repositories/releases/org/jolokia/jolokia-jvm/1.1.1/jolokia-jvm-1.1.1-agent.jar > /usr/share/java/jolokia.jar
-curl -sL https://oss.sonatype.org/content/repositories/releases/org/softee/pojo-mbean/1.1/pojo-mbean-1.1.jar > /usr/share/java/pojo-mbean.jar
+apt-get -q -y unzip
+
+# jars
+
+mkdir -p /usr/share/java
+cd /usr/share/java
+
+curl -sL -o /usr/share/java/prog.jar http://pighizzini.di.unimi.it/jb/librerie/prog-3ed.jar
+
+curl -sL -o /usr/share/java/j4im.jar https://github.com/mapio/j4im/releases/download/0.3-beta/j4im-0.3-beta.jar
+
+# docs
+
+mkdir -p /usr/share/nginx/html/docs
+cd /usr/share/nginx/html/docs
+
+curl -sL -o /tmp/prog.zip http://pighizzini.di.unimi.it/jb/librerie/prog-doc-3ed.zip && unzip /tmp/prog.zip && mv doc prog
+
+curl -sL -o /tmp/j4im.zip https://github.com/mapio/j4im/releases/download/0.3-beta/j4im-0.3-beta-javadoc.zip && unzip /tmp/j4im.zip && mv j4im-0.3-beta-javadoc j4im
+
+curl -sL -C - -b "oraclelicense=accept-securebackup-cookie" -o /tmp/java.zip http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-apidocs.zip && unzip /tmp/java.zip && mv docs java

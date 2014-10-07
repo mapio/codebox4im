@@ -25,6 +25,10 @@ cat > /home/vagrant/.bash_aliases <<-EOF
 	alias l='/bin/ls -Ghl'
 EOF
 
+cat >> /home/vagrant/.profile <<-'EOF'
+	export CLASSPATH="$CLASSPATH":/usr/share/java/prog.jar:/usr/share/java/j4im.jar
+EOF
+
 mkdir -p /home/vagrant/.pip
 cat > /home/vagrant/.pip/pip.conf <<-EOF
 	[global]

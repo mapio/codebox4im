@@ -1,1 +1,23 @@
-npm install -g codebox
+npm install -g codebox 2>/home/vagrant/.codebox-install.err
+
+cat > /etc/init/codebox.conf <<-EOF
+	description "Codebox"
+
+	start on (local-filesystems and net-device-up IFACE=eth0)
+	stop  on shutdown
+
+	respawn # restart when job dies
+
+	# Start the Process
+	env DIR=/home/vagrant/
+	env NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript
+	exec start-stop-daemon \
+		--start \
+		--chuid vagrant \
+		--make-pidfile --pidfile /var/run/codebox.pid \
+		--chdir /home/vagrant --exec /usr/bin/codebox -- \
+		run workspace >> /var/log/codebox.log 2>&1
+EOF
+
+touch /var/log/codebox.log
+service codebox start
