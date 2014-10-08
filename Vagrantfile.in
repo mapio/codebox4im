@@ -24,6 +24,13 @@ _cleanup
 PROVISION
 
 Vagrant.configure("2") do |config|
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+    #config.cache.synced_folder_opts = {
+    #  type: :nfs,
+    #  mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
+    #}
+  end
   config.vm.define :codebox do |codebox|
 	codebox.vm.box     = "ubuntu/trusty64"
     codebox.vm.network :forwarded_port, guest: 80, host: 8000

@@ -66,7 +66,7 @@ cat >/usr/share/nginx/html/start/index.html <<-'EOF'
 		</ul>
 		</li>
 		</ul>
-		<p>© Copyright 2014, Massimo Santini &emdash; <a href="https://github.com/mapio/codebox4im">https://github.com/mapio/codebox4im</a>.</p>
+		<p>Copyright 2014, Massimo Santini - <a href="https://github.com/mapio/codebox4im">https://github.com/mapio/codebox4im</a>.</p>
 	</body>
 	</html>
 EOF
