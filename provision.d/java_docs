@@ -1,0 +1,6 @@
+mkdir -p /usr/share/nginx/html/docs
+cd /usr/share/nginx/html/docs
+
+curl -L -C - -b "oraclelicense=accept-securebackup-cookie" -o /tmp/java.zip http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-apidocs.zip && unzip /tmp/java.zip && mv docs java
+
+chmod -R a+rX /usr/share/nginx/html/docs

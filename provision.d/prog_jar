@@ -1,0 +1,13 @@
+mkdir -p /usr/local/share/java
+cd /usr/local/share/java
+
+curl -L -o prog.jar http://pighizzini.di.unimi.it/jb/librerie/prog-3ed.jar
+
+chmod -R a+rX /usr/local/share/java
+
+mkdir -p /usr/share/nginx/html/docs
+cd /usr/share/nginx/html/docs
+
+curl -L -o /tmp/prog.zip http://pighizzini.di.unimi.it/jb/librerie/prog-doc-3ed.zip && unzip /tmp/prog.zip && mv doc prog
+
+chmod -R a+rX /usr/share/nginx/html/docs

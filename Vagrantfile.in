@@ -3,15 +3,18 @@ $provision = <<PROVISION
 export DEBIAN_FRONTEND=noninteractive
 _update
 # Provisioned via apt-get install
+_provision unzip /usr/bin/unzip
 _provision g++ /usr/bin/g++
 _provision git /usr/bin/git
 _provision python-dev /usr/include/python2.7/Python.h
 # Provisioned by a function
-_provision jars /usr/local/share/java/.provisioned
 _provision getpip /usr/local/bin/pip
 _provision nodejs /usr/bin/nodejs
 _provision codebox /usr/bin/codebox
 _provision java7 /usr/lib/jvm/java-7-oracle/jre/bin/java
+_provision prog_jar /usr/local/share/java/prog.jar
+_provision j4im_jar /usr/local/share/java/j4im.jar
+_provision java_docs /usr/share/nginx/html/docs/java/index.html
 _provision mercurial /usr/local/bin/hg
 _provision userfiles /home/vagrant/.userfiles
 _provision nginx /usr/sbin/nginxx
