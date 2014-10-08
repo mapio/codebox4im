@@ -1,7 +1,7 @@
 if ! [ -d /home/vagrant/codebox4im ]; then
-	echo "*** Cloning 'codebox4im' from GitHub" 1>&2
-	su - vagrant -c 'hg clone git://github.com/mapio/codebox4im.git'
+	echo "*** Cloning 'codebox4im' from GitHub"
+	sudo -iu vagrant hg clone git://github.com/mapio/codebox4im.git
 else
-	echo "*** Updating 'codebox4im' from GitHub" 1>&2
-	su - vagrant -c 'hg -R codebox4im pull --update'
+	echo "*** Updating 'codebox4im' from GitHub"
+	sudo -iu vagrant hg -R codebox4im pull --update
 fi

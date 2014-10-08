@@ -1,6 +1,9 @@
+echo "*** Updating system packages"
+(
 if ! [ -r /.codebox4im-updated-on-$(date +%Y%m%d) ]; then
-	apt-get -q -y update
-	apt-get -q -y dist-upgrade
+	apt-get -y update
+	apt-get -y dist-upgrade
 	rm -f /home/vagrant/postinstall.sh /.codebox4im-updated-on-*
 	touch /.codebox4im-updated-on-$(date +%Y%m%d)
 fi
+) >> /tmp/provision.log 2>&1

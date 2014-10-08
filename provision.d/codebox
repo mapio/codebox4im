@@ -1,4 +1,4 @@
-npm install -g codebox 2>/home/vagrant/.codebox-install.err
+npm install -g codebox
 
 cat > /etc/init/codebox.conf <<-EOF
 	description "Codebox"

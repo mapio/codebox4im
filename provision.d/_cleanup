@@ -1,2 +1,5 @@
+echo "*** Cleaning up"
+(
 apt-get -y autoremove
 apt-get -y autoclean
+) >> /tmp/provision.log 2>&1

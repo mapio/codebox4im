@@ -71,7 +71,6 @@ cat >/usr/share/nginx/html/start/index.html <<-'EOF'
 	</html>
 EOF
 
-
 rm -f /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/codebox /etc/nginx/sites-enabled/
 
