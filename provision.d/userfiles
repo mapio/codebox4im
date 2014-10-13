@@ -26,7 +26,8 @@ cat > /home/vagrant/.bash_aliases <<-EOF
 EOF
 
 cat >> /home/vagrant/.bashrc <<-'EOF'
-	export CLASSPATH="$CLASSPATH":/usr/local/share/java/prog.jar:/usr/local/share/java/j4im.jar
+	export CLASSPATH="${CLASSPATH:+$CLASSPATH:}".:/usr/local/share/java/prog.jar:/usr/local/share/java/j4im.jar
+	export PS1='[\\W]\\$ '
 EOF
 
 mkdir -p /home/vagrant/.pip
@@ -35,3 +36,5 @@ cat > /home/vagrant/.pip/pip.conf <<-EOF
 	download_cache = ~/.pip/cache
 EOF
 
+rm -rf /home/vagrant/.npm
+mkdir /home/vagrant/workspace
