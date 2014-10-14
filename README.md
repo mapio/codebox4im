@@ -3,8 +3,6 @@ Codebox per il Laboratorio di Programmazione
 
 ![CC SA3.0](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 
-![build status](https://travis-ci.org/mapio/codebox4im.svg?branch=master)
-
 Questo repository contiene (le configurazioni necessarie a predisporre) una
 immagine di una *macchina virtuale* contenente l'ambiente di sviluppo
 [Codebox](https://www.codebox.io/), utile allo svolgimento degli esercizi
