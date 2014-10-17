@@ -21,7 +21,7 @@ studente dovrà:
 * scaricare ed installare [Chrome](https://www.google.com/chrome/).
 
 Una volta installato il software di cui sopra, lo studente dovrà scaricare il
-file all'indirizzo [http://git.io/wxmJXw](http://git.io/wxmJXw) e salvarlo col
+file all'indirizzo [http://git.io/CJ-rWA](http://git.io/CJ-rWA) e salvarlo col
 nome `Vagrantfile` in una directory vuota, portarsi in tale directory ed
 impartire il comando
 

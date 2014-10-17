@@ -1,15 +1,14 @@
 #!/bin/bash
 
 (
-echo '$functions = <<FUNCTIONS'
 for i in provision.d/*; do
 	echo function $(basename $i) \{
 	cat $i | sed s/^/$'\t'/
 	echo \}
 done
-echo 'FUNCTIONS'
-cat Vagrantfile.in ) > ./Vagrantfile
+cat provision.in
+) > ./provision.sh
 
 if [ ! -z "$1" ]; then
-	gist Vagrantfile -u ef23edceb8a5709b87d0
+	gist Vagrantfile provision.sh -u ef23edceb8a5709b87d0
 fi
