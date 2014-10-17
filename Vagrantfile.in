@@ -8,6 +8,7 @@ _provision g++ /usr/bin/g++
 _provision git /usr/bin/git
 _provision python-dev /usr/include/python2.7/Python.h
 # Provisioned by a function
+_provision sound /lib/modules/$(uname -r)/kernel/sound/pci/snd-intel8x0.ko
 _provision getpip /usr/local/bin/pip
 _provision nodejs /usr/bin/nodejs
 _provision codebox /usr/bin/codebox
@@ -26,14 +27,21 @@ PROVISION
 Vagrant.configure("2") do |config|
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
-    #config.cache.synced_folder_opts = {
-    #  type: :nfs,
-    #  mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
-    #}
+  end
+  if Vagrant::Util::Platform.darwin?
+    config.vm.provider "virtualbox" do |v|
+      v.customize ['modifyvm', :id, '--audio', 'coreaudio', '--audiocontroller', 'ac97']
+    end
+  end
+  if Vagrant::Util::Platform.windows?
+    config.vm.provider "virtualbox" do |v|
+      v.customize ['modifyvm', :id, '--audio', 'dsound', '--audiocontroller', 'ac97']
+    end
   end
   config.vm.define :codebox do |codebox|
-	codebox.vm.box     = "ubuntu/trusty64"
+  	codebox.vm.box = "ubuntu/trusty32"
     codebox.vm.network :forwarded_port, guest: 80, host: 8000
     codebox.vm.provision :shell, :inline => $functions + "\n" + $provision
   end
+  config.vm.post_up_message = "Apri l'indirizzo http://127.0.0.1:8000/start/ per iniziare!"
 end
