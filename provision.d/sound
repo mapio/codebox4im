@@ -1,0 +1,4 @@
+apt-get -y install alsa-base linux-image-extra-$(uname -r)
+modprobe snd-intel8x0
+echo snd-intel8x0 >> /etc/modules
+usermod -a -G audio vagrant
