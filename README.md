@@ -35,3 +35,16 @@ esclusivamente al primo avvio.
 Terminata l'esecuzione del precedente comando, lo studente può accedere alla
 macchina virtuale aprendo (con Chrome) l'indirizzo
 [http://127.0.0.1:8000/start/](http://127.0.0.1:8000/start/).
+
+
+Note tecniche
+-------------
+
+L'ambiente di sviluppo così configurato comprende:
+
+- [Ubuntu 14.04.1](http://releases.ubuntu.com/14.04/)
+- [Java SE Development Kit 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+- [Java Platform SE 7 Documentation](http://docs.oracle.com/javase/7/docs/)
+- [Codebox](https://www.codebox.io/)
+- [prog](http://pighizzini.di.unimi.it/jb/librerie/)
+- [j4im](https://github.com/mapio/j4im)
