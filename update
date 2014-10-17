@@ -8,5 +8,8 @@ for i in provision.d/*; do
 	echo \}
 done
 echo 'FUNCTIONS'
-
 cat Vagrantfile.in ) > ./Vagrantfile
+
+if [ ! -z "$1" ]; then
+	gist Vagrantfile -u ef23edceb8a5709b87d0
+fi
