@@ -65,7 +65,7 @@ ospite, possono presentarsi dei problemi, chiunque riscontrasse dei
 malfunzionamenti seguendo le istruzioni seguenti è caldamente invitato a
 segnalarli tramite l'[apposita pagina](http://goo.gl/forms/IYxj9GtX58).
 
-## Usi successivi
+### Usi successivi
 
 Se il sistema operativo **ospite** viene *spento* (o per qualche altra ragione
 si arresta la macchina virtuale approntata al passo precedente) è possibile
@@ -88,7 +88,7 @@ possibile aggiornare la macchina virtuale con il comando
 che potrebbe richiedere, a seconda dei casi, una lunga attesa.
 
 
-# Note tecniche
+## Note tecniche
 
 
 L'ambiente di sviluppo presente nella macchina virtuale comprende:
