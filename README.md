@@ -35,7 +35,7 @@ correntemente e che conterrà la macchina virtuale). Lo studente dovrà:
 
 Una volta installato il software di cui sopra, è necessario scaricare il file
 all'indirizzo [http://git.io/CJ-rWA](http://git.io/CJ-rWA) e salvarlo col nome
-`Vagrantfile` (senza estensione `.txt`) in una directory vuota, portarsi in
+`Vagrantfile` (senza estensione `.txt`) in una directory vuota (il cui nome **non contenga accenti o lettere speciali**), portarsi in
 tale directory ed impartire il comando
 
 	vagrant up
