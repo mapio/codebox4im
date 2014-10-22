@@ -79,7 +79,7 @@ stato `running`), è possibile *riavviarla* in caso di necessità con il comando
 
     vagrant reload
 
-In fine, qualora venga *aggiornata* la configurazione della macchina, è
+In fine, qualora venga **aggiornata** la configurazione della macchina, è
 possibile aggiornare la macchina virtuale con il comando
 
 	vagrant halt
