@@ -58,7 +58,15 @@ comandi
     vagrant destroy -f
     vagrant up
 
-nella cartella dove è presente il file`Vagrantfile`.
+nella cartella dove è presente il file`Vagrantfile`. In alternativa, se
+l'unico difetto riscontrato fosse l'assenza delle librerie `prog` e `j4im` è
+possibile tentare di installarle dando all'*interno della macchina virtuale*
+(e non nel sistema ospite) il comando
+
+	curl -sL http://git.io/xYrFRQ | sudo bash
+
+una volta che il sistema ospite sia *correttamente connesso in rete* (non al
+SiLab).
 
 **ATTENZIONE**: a casua della varietà dei sistemi operativi  utilizzati come
 ospite, possono presentarsi dei problemi, chiunque riscontrasse dei
@@ -86,6 +94,28 @@ possibile aggiornare la macchina virtuale con il comando
 	vagrant up --provision
 
 che potrebbe richiedere, a seconda dei casi, una lunga attesa.
+
+### In SiLab
+
+Per poter utilizzare in SiLab un ambiente simile a quello qui descritto è
+necessario (una sola volta) procedere all'installazione delle librerie con il
+comando
+
+	curl -sL http://git.io/1a9BCw | bash
+
+e quindi invocare l'esecuzione dell'ambiente con
+
+	 /users/ms000123/dbin/runcodebox
+
+oppure, generando (una sola volta) il *link simbolico* seguente
+
+	ln -s  /users/ms000123/dbin/runcodebox $HOME
+
+ed invocare successivamente l'esecuzione dell'ambiente con
+
+	./rundodebox
+
+nella propria *home directory*.
 
 
 ## Note tecniche

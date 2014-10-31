@@ -10,5 +10,5 @@ cat provision.in
 ) > ./provision.sh
 
 if [ ! -z "$1" ]; then
-	gist Vagrantfile provision.sh -u ef23edceb8a5709b87d0
+	gist Vagrantfile provision.sh reprovision.sh silab.sh -u ef23edceb8a5709b87d0
 fi

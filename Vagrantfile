@@ -1,22 +1,24 @@
 Vagrant.configure("2") do |config|
 
-  if File.exists?( 'provision.sh' )
-    $provisioning_script = File.open( 'provision.sh' ).read
-    $stderr.puts( "Using 'provision.sh' for provisioning...\n" )
-  else
-    require 'net/http'
-    $provisioning_script = Net::HTTP.get(URI('https://gist.githubusercontent.com/mapio/ef23edceb8a5709b87d0/raw/provision.sh'))
-    $stderr.puts( "Downloaded gist #ef23edceb8a5709b87d0 for provisioning...\n" )
-    File.open( 'provision.sh', 'w' ) { |f| f.write( $provisioning_script ); f.close() }
+  if ARGV[0] == 'up' || ARGV[0] == 'provision' || ARGV[0] == 'reload'
+    if File.exists?( 'provision.sh' )
+      $provisioning_script = File.open( 'provision.sh' ).read
+      $stderr.puts( "Using 'provision.sh' for provisioning...\n" )
+    else
+      require 'net/http'
+      $provisioning_script = Net::HTTP.get(URI('https://gist.githubusercontent.com/mapio/ef23edceb8a5709b87d0/raw/provision.sh'))
+      $stderr.puts( "Downloaded gist #ef23edceb8a5709b87d0 for provisioning...\n" )
+      File.open( 'provision.sh', 'w' ) { |f| f.write( $provisioning_script ); f.close() }
+    end
+    $audio = 'null'
+    if Vagrant::Util::Platform.darwin?
+      $audio = 'coreaudio'
+    elsif Vagrant::Util::Platform.windows?
+      $audio = 'dsound'
+    end
+    $stderr.puts( "Audio will be set to '" + $audio + "'\n" )
   end
 
-  $audio = 'null'
-  if Vagrant::Util::Platform.darwin?
-    $audio = 'coreaudio'
-  elsif Vagrant::Util::Platform.windows?
-    $audio = 'dsound'
-  end
-  $stderr.puts( "Audio will be set to '" + $audio + "'\n" )
 
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
