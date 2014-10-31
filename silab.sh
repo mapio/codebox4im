@@ -18,7 +18,7 @@ echo "Installing prog api documentation..."
 echo "Installing j4im api documentation..."
 ( curl -L -o /tmp/j4im.zip https://github.com/mapio/j4im/releases/download/0.3-beta/j4im-0.3-beta-javadoc.zip && unzip /tmp/j4im.zip && mv j4im-0.3-beta-javadoc j4im ) >/dev/null 2>&1
 
-echo "Setting classpaht"
+echo "Setting classpath"
 
 echo 'export CLASSPATH="${CLASSPATH:+$CLASSPATH:}".:$HOME/.labprog/prog.jar:$HOME/.labprog/j4im.jar' >> "$HOME/.bashrc"
 

@@ -11,4 +11,5 @@ cat provision.in
 
 if [ ! -z "$1" ]; then
 	gist Vagrantfile provision.sh reprovision.sh silab.sh -u ef23edceb8a5709b87d0
+	curl -o /dev/null -sL http://documentup.com/mapio/codebox4im/recompile
 fi
