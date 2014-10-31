@@ -101,7 +101,7 @@ Per poter utilizzare in SiLab un ambiente simile a quello qui descritto è
 necessario (una sola volta) procedere all'installazione delle librerie con il
 comando
 
-	curl -sL http://git.io/1a9BCw | bash
+	export http_proxy=www:8080 && curl -sL http://git.io/1a9BCw | bash
 
 e quindi invocare l'esecuzione dell'ambiente con
 
