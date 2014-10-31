@@ -1,4 +1,4 @@
-export http_proxy=www:8080
+export ALL_PROXY=www:8080
 
 mkdir -p "$HOME/.labprog"
 cd "$HOME/.labprog"
