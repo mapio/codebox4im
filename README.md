@@ -113,7 +113,7 @@ oppure, generando (una sola volta) il *link simbolico* seguente
 
 ed invocare successivamente l'esecuzione dell'ambiente con
 
-	./rundodebox
+	./runcodebox
 
 nella propria *home directory*.
 
