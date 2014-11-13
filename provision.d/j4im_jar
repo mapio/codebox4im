@@ -1,13 +1,13 @@
 mkdir -p /usr/local/share/java
 cd /usr/local/share/java
 
-curl -L -o j4im.jar https://github.com/mapio/j4im/releases/download/0.3-beta/j4im-0.3-beta.jar
+curl -L -o j4im.jar https://github.com/mapio/j4im/releases/download/0.4-beta/j4im-0.4-beta.jar
 
 chmod -R a+rX /usr/local/share/java
 
 mkdir -p /usr/share/nginx/html/docs
 cd /usr/share/nginx/html/docs
 
-curl -L -o /tmp/j4im.zip https://github.com/mapio/j4im/releases/download/0.3-beta/j4im-0.3-beta-javadoc.zip && unzip /tmp/j4im.zip && mv j4im-0.3-beta-javadoc j4im
+curl -L -o /tmp/j4im.zip https://github.com/mapio/j4im/releases/download/0.4-beta/j4im-0.4-beta-javadoc.zip && unzip /tmp/j4im.zip && mv j4im-0.4-beta-javadoc j4im
 
 chmod -R a+rX /usr/share/nginx/html/docs
