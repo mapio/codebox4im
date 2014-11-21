@@ -68,11 +68,6 @@ possibile tentare di installarle dando all'*interno della macchina virtuale*
 una volta che il sistema ospite sia *correttamente connesso in rete* (non al
 SiLab).
 
-**ATTENZIONE**: a casua della varietà dei sistemi operativi  utilizzati come
-ospite, possono presentarsi dei problemi, chiunque riscontrasse dei
-malfunzionamenti seguendo le istruzioni seguenti è caldamente invitato a
-segnalarli tramite l'[apposita pagina](http://goo.gl/forms/IYxj9GtX58).
-
 ### Usi successivi
 
 Se il sistema operativo **ospite** viene *spento* (o per qualche altra ragione
