@@ -1,5 +1,10 @@
 #!/bin/bash
 
+j4imversion=$(curl -sL https://raw.githubusercontent.com/mapio/j4im/master/build.xml | grep '"version"' | cut -d = -f 3 | cut -d '"' -f2)
+echo "Updating j4im version to '$j4imversion'"
+
+sed -i~ "s/j4imversion=.*/j4imversion='$j4imversion'" provision.d/j4im_jar reprovision.sh silab.sh
+
 (
 for i in provision.d/*; do
 	echo function $(basename $i) \{
