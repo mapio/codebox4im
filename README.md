@@ -1,12 +1,6 @@
 # Codebox per il Laboratorio di Programmazione
 
-
 ![CC SA3.0](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
-
-**ATTENZIONE**: a casua della varietà dei sistemi operativi  utilizzati come
-ospite, possono presentarsi dei problemi, chiunque riscontrasse dei
-malfunzionamenti seguendo le istruzioni seguenti è caldamente invitato a
-segnalarli tramite l'[apposita pagina](http://goo.gl/forms/IYxj9GtX58).
 
 Questo repository contiene (le configurazioni necessarie a predisporre) una
 immagine di una *macchina virtuale* contenente l'ambiente di sviluppo
