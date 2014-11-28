@@ -1,4 +1,4 @@
-j4imversion="0.4.1-beta"
+j4imversion="0.4.2-beta"
 
 export ALL_PROXY=www:8080
 
