@@ -1,4 +1,4 @@
-j4imversion=123
+j4imversion="0.4.1-beta"
 
 mkdir -p /usr/local/share/java
 cd /usr/local/share/java
