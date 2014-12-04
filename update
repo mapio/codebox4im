@@ -5,7 +5,7 @@ echo "Updating j4im version to '$j4imversion'"
 
 hg ci -m'Auto update version' && hg push
 
-sed -i~ "s/j4imversion=.*/j4imversion=\"$j4imversion\"/" provision.d/j4im_jar reprovision.sh silab.sh
+sed -i~ "s/j4imversion=.*/j4imversion=\"$j4imversion\"/" provision.d/j4im_jar reprovision.sh
 
 (
 for i in provision.d/*; do
@@ -17,6 +17,6 @@ cat provision.in
 ) > ./provision.sh
 
 if [ ! -z "$1" ]; then
-	gist Vagrantfile provision.sh reprovision.sh silab.sh -u ef23edceb8a5709b87d0
+	gist Vagrantfile provision.sh reprovision.sh -u ef23edceb8a5709b87d0
 	curl -o /dev/null -sL http://documentup.com/mapio/codebox4im/recompile
 fi
