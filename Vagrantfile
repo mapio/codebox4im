@@ -11,7 +11,9 @@ Vagrant.configure("2") do |config|
       File.open( 'provision.sh', 'w' ) { |f| f.write( $provisioning_script ); f.close() }
     end
     $audio = 'null'
-    if Vagrant::Util::Platform.darwin?
+    if Vagrant::Util::Platform.linux?
+      $audio = 'alsa'
+    elsif Vagrant::Util::Platform.darwin?
       $audio = 'coreaudio'
     elsif Vagrant::Util::Platform.windows?
       $audio = 'dsound'
@@ -27,7 +29,7 @@ Vagrant.configure("2") do |config|
       v.customize ['modifyvm', :id, '--audio', $audio, '--audiocontroller', 'ac97']
   end
   config.vm.define :codebox4im do |codebox4im|
-  	codebox4im.vm.box = "ubuntu/trusty32"
+    codebox4im.vm.box = "ubuntu/trusty32"
     codebox4im.vm.network :forwarded_port, guest: 80, host: 8000
     codebox4im.vm.provision :shell, :inline => $provisioning_script
   end
