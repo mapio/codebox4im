@@ -16,6 +16,15 @@ done
 cat provision.in
 ) > ./provision.sh
 
+(
+for i in provision.d/*; do
+	echo function $(basename $i) \{
+	cat $i | sed s/^/$'\t'/
+	echo \}
+done
+cat docker.in
+) > ./docker.sh
+
 if [ ! -z "$1" ]; then
 	gist Vagrantfile provision.sh reprovision.sh -u ef23edceb8a5709b87d0
 	curl -o /dev/null -sL http://documentup.com/mapio/codebox4im/recompile
