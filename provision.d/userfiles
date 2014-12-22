@@ -1,3 +1,7 @@
+if ! grep -q vagrant /etc/passwd; then
+	adduser --disabled-password --gecos "" vagrant
+fi
+
 cat >/home/vagrant/.inputrc <<-EOF
 	# silence!
 	set bell-style none
